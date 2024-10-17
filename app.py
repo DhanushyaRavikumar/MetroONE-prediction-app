@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
 import onnxruntime as ort
 import numpy as np
+from flask_cors import CORS
 
 # Initialize Flask app
 app = Flask(__name__)
 
+CORS(app)
 # Load the ONNX model
 onnx_model_path = "Gradient_boost_model.onnx"
 session = ort.InferenceSession(onnx_model_path)
@@ -41,4 +43,4 @@ def predict():
 
 # Main driver
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=False, port=8080)
+    app.run(debug=False, port=8080)
