@@ -1,0 +1,2 @@
+*.onxx filter=lfs diff=lfs merge=lfs -text
+yourtrellis_model.onnx filter=lfs diff=lfs merge=lfs -text
